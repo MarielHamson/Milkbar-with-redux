@@ -1,5 +1,5 @@
 import React from 'react';
-import ReusableForm from './ReusableForm';
+import MyStyledForm from './ReusableForm';
 import PropTypes from 'prop-types';
 
 function EditMilkForm(props) {
@@ -17,7 +17,7 @@ function EditMilkForm(props) {
 	}
 	return (
 		<React.Fragment>
-			<ReusableForm
+			<MyStyledForm
 				formSubmissionHandler={handleEditMilkFormSubmission}
 				buttonText="Update Milk"
 			/>

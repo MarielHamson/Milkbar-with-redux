@@ -14,7 +14,7 @@ function Milk(props) {
 			</div>
 
 			<div onClick={() => props.whenMinusClicked(props.id)}>
-				<h1> -- </h1>
+				<h1> Sell One </h1>
 			</div>
 			<hr />
 		</React.Fragment>

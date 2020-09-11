@@ -3,6 +3,7 @@ import NewMilkForm from './NewMilkForm';
 import MilkList from './MilkList';
 import MilkDetail from './MilkDetail';
 import EditMilkForm from './EditMilkForm';
+import Button from 'react-bootstrap/Button';
 
 class MilkControl extends React.Component {
 	constructor(props) {
@@ -30,7 +31,6 @@ class MilkControl extends React.Component {
 	};
 
 	handleEditClick = () => {
-		console.log('handleEditClick reached!');
 		this.setState({ editing: true });
 	};
 
@@ -56,7 +56,7 @@ class MilkControl extends React.Component {
 		const selectedMilk = this.state.mainMilkList.filter(
 			(milk) => milk.id === id
 		)[0];
-		this.remaining -= 1;
+		selectedMilk.remaining -= 1;
 	};
 
 	handleAddingNewMilkToList = (newMilk) => {
@@ -117,7 +117,9 @@ class MilkControl extends React.Component {
 		return (
 			<React.Fragment>
 				{currentlyVisibleState}
-				<button onClick={this.handleClick}>{buttonText}</button>
+				<Button variant="outline-success" onClick={this.handleClick}>
+					{buttonText}
+				</Button>
 			</React.Fragment>
 		);
 	}

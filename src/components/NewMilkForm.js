@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
-import ReusableForm from './ReusableForm';
+import MyStyledForm from './ReusableForm';
 
 function NewMilkForm(props) {
 	function handleNewMilkFormSubmission(event) {
@@ -17,7 +17,7 @@ function NewMilkForm(props) {
 	}
 	return (
 		<React.Fragment>
-			<ReusableForm
+			<MyStyledForm
 				formSubmissionHandler={handleNewMilkFormSubmission}
 				buttonText="Add Milk!"
 			/>
