@@ -56,7 +56,7 @@ class MilkControl extends React.Component {
 		const selectedMilk = this.state.mainMilkList.filter(
 			(milk) => milk.id === id
 		)[0];
-		selectedMilk.remaining -= 1;
+		console.log(selectedMilk);
 	};
 
 	handleAddingNewMilkToList = (newMilk) => {
@@ -108,7 +108,7 @@ class MilkControl extends React.Component {
 				<MilkList
 					milkList={this.state.mainMilkList}
 					onMilkSelection={this.handleChangingSelectedMilk}
-					onSellingMilk={this.handleSellingMilk}
+					onClickingMinus={this.handleSellingMilk}
 				/>
 			);
 			buttonText = 'Add Milk';

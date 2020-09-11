@@ -23,9 +23,6 @@ function Milk(props) {
 							</ul>
 						</Card.Text>
 					</div>
-					<div onClick={() => props.whenMinusClicked(props.id)}>
-						<p> Sell One </p>
-					</div>
 				</Card.Body>
 			</Card>
 			<hr />
@@ -34,9 +31,10 @@ function Milk(props) {
 }
 
 Milk.propTypes = {
-	names: PropTypes.string.isRequired,
-	location: PropTypes.string.isRequired,
-	issue: PropTypes.string,
+	name: PropTypes.string.isRequired,
+	brand: PropTypes.string.isRequired,
+	price: PropTypes.string.isRequired,
+	origin: PropTypes.string.isRequired,
 	whenMilkClicked: PropTypes.func,
 };
 

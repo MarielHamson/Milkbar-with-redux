@@ -37,9 +37,6 @@ function MilkDetail(props) {
 					>
 						Delete Milk
 					</Button>
-					<div onClick={() => props.whenMinusClicked(props.id)}>
-						<p> Sell One </p>
-					</div>
 				</Card.Body>
 			</Card>{' '}
 			<hr />
