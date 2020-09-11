@@ -17,6 +17,7 @@ function MilkList(props) {
 					remaining={milk.remaining}
 					id={milk.id}
 					key={milk.id}
+					whenMinusClicked={props.onSellingMilk}
 				/>
 			))}
 		</React.Fragment>

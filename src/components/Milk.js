@@ -11,8 +11,12 @@ function Milk(props) {
 					Origin: {props.origin}
 					Amount Remaining: {props.remaining}
 				</h3>
-				<hr />
 			</div>
+
+			<div onClick={() => props.whenMinusClicked(props.id)}>
+				<h1> -- </h1>
+			</div>
+			<hr />
 		</React.Fragment>
 	);
 }
