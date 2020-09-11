@@ -11,19 +11,15 @@ function MilkList(props) {
 				<Milk
 					whenMilkClicked={props.onMilkSelection}
 					name={milk.name}
-					brand={milk.brand}
-					price={milk.price}
-					origin={milk.origin}
-					amount
-					remaining={milk.remaining}
+					// brand={milk.brand}
+					// price={milk.price}
+					// origin={milk.origin}
+					// amount
+					// remaining={milk.remaining}
 					id={milk.id}
 					key={milk.id}
-					whenClickingMinus={milk.onClickingMinus}
 				/>
 			))}
-			{/* <div onClick={() => onClickingMinus(milk.id)}>
-				<p> Sell One </p> */}
-			{/* </div> */}
 		</React.Fragment>
 	);
 }

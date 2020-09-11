@@ -34,6 +34,13 @@ class MilkControl extends React.Component {
 		this.setState({ editing: true });
 	};
 
+	handleSellClick = () => {
+		this.setState({
+			editing: false,
+			selectedMilk: null,
+		});
+	};
+
 	handleEditingMilkInList = (milkToEdit) => {
 		const editedMainMilkList = this.state.mainMilkList
 			.filter((milk) => milk.id !== this.state.selectedMilk.id)
@@ -45,18 +52,22 @@ class MilkControl extends React.Component {
 		});
 	};
 
+	handleSellingMilk = (milkToEdit) => {
+		// const milkMinusOne = { ...milkToEdit, milk.remaining: remaining -= 1 };
+		// const soldOneMainMilkList = this.state.mainMilkList
+		// 	.filter((milk) => milk.id !== this.state.selectedMilk.id)
+		// 	.concat(milkMinusOne);
+		this.setState({
+			// mainMilkList: soldOneMainMilkList,
+			editing: false,
+			selectedMilk: null,
+		});
+	};
 	handleChangingSelectedMilk = (id) => {
 		const selectedMilk = this.state.mainMilkList.filter(
 			(milk) => milk.id === id
 		)[0];
 		this.setState({ selectedMilk: selectedMilk });
-	};
-
-	handleSellingMilk = (id) => {
-		const selectedMilk = this.state.mainMilkList.filter(
-			(milk) => milk.id === id
-		)[0];
-		console.log(selectedMilk);
 	};
 
 	handleAddingNewMilkToList = (newMilk) => {
@@ -86,6 +97,7 @@ class MilkControl extends React.Component {
 				<EditMilkForm
 					milk={this.state.selectedMilk}
 					onEditMilk={this.handleEditingMilkInList}
+					onSellMilk={this.handleSellingMilk}
 				/>
 			);
 			buttonText = 'Return to Milk List';
@@ -95,6 +107,7 @@ class MilkControl extends React.Component {
 					milk={this.state.selectedMilk}
 					onClickingDelete={this.handleDeletingMilk}
 					onClickingEdit={this.handleEditClick}
+					onClickingSell={this.handleSellClick}
 				/>
 			);
 			buttonText = 'Return to Milk List';
@@ -108,7 +121,6 @@ class MilkControl extends React.Component {
 				<MilkList
 					milkList={this.state.mainMilkList}
 					onMilkSelection={this.handleChangingSelectedMilk}
-					onClickingMinus={this.handleSellingMilk}
 				/>
 			);
 			buttonText = 'Add Milk';
