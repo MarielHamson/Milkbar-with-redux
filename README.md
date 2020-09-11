@@ -1,68 +1,96 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+  <br>
+  <a href="https://www.github.com/MarielHamson/MilkBar"><img src="../milkbar/public/milk-placeholder.jpeg" alt="Milkbar Logo" width="200"></a>
+  <br>
+MilkBar  <br>
+</h1>
 
-## Available Scripts
+<h4 align="center">A minimal but beautiful tracker for a bar where they sell milk</h4>
 
-In the project directory, you can run:
+<p align="center">
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#reach-out"> Reach Out </a> •
+  <a href="#credits">Credits</a> •
+  <a href="#you-may-also-like">Related</a> •
+  <a href="#license">License</a>
+</p>
 
-### `npm start`
+## Key Features
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Tracks types of milk (price, brand, origin, amount remaining in keg)
+- Easy to use Navigation Bar
+- Add new Milk variety
+- See all Milk varieties
+- Edit or Delete Milk variety
+- Sell 1 pint of milk
+- Mobile Responsive Site
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Cross platform
+  - Windows, macOS and Linux ready.
 
-### `npm test`
+## Wireframe Mockup
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![component mockup](../milkbar/public/milkbar-mockup.png)
 
-### `npm run build`
+## How To Use
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To clone and run this application, you'll need [Git](https://git-scm.com), [NPM](https://www.npmjs.com/get-npm) installed. If you wish to review the raw code, it's easiest to download a code editor such as Visual Studio Code or Atom.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Clone this repository from your Command Line:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`$ git clone https://github.com/MarielHamson/MilkBar.git`
 
-### `npm run eject`
+# Go into the repository
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+\$ cd milkbar
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Open repository in VS Code or other
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+\$ code .
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Install dependencies in Root Project Directory (milkbar)
 
-## Learn More
+\$ npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Run the app
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+\$ npm start
 
-### Code Splitting
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Reach Out
 
-### Analyzing the Bundle Size
+MilkBar is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <mariel.hamson@gmail.com> about anything you'd want to say about this software. I'd really appreciate it!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Credits
 
-### Making a Progressive Web App
+This software uses the following technologies:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- React (JSX)
+- CSS (Bootstrap)
 
-### Advanced Configuration
+## Support
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+<a href="https://www.buymeacoffee.com/" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
-### Deployment
+<p>Or</p>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+<a href="https://www.patreon.com/">
+	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
+</a>
 
-### `npm run build` fails to minify
+## You may also like...
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+-- Other projects in my GitHub Repository
+
+## License
+
+MIT
+
+---
+
+> LinkedIn[MarielHamson](https://www.linkedin.com/MarielHamson) &nbsp;&middot;&nbsp;
+> GitHub [MarielHamson](https://github.com/MarielHamson) &nbsp;&middot;&nbsp;
+> Instagram [Miriquitecontrary](https://instagram.com/miriquitecontrary)
+```
