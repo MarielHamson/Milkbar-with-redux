@@ -47,7 +47,7 @@ function MyStyledForm(props) {
 				<Form.Row>
 					<Col>
 						<Form.Group controlId="formGroupRemaining">
-							<Form.Label>Brand of Milk</Form.Label>
+							<Form.Label>Amount Remaining</Form.Label>
 							<Form.Control
 								type="text"
 								name="remaining"

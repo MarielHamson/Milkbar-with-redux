@@ -6,6 +6,7 @@ function MilkList(props) {
 	return (
 		<React.Fragment>
 			<hr />
+			<h1>Our Milk Lineup</h1>
 			{props.milkList.map((milk) => (
 				<Milk
 					whenMilkClicked={props.onMilkSelection}
