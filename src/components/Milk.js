@@ -8,9 +8,9 @@ function Milk(props) {
 	};
 	return (
 		<React.Fragment>
-			<Card style={{ width: '18rem' }}>
-				<Card.Body>
-					<div onClick={() => props.whenMilkClicked(props.id)}>
+			<div onClick={() => props.whenMilkClicked(props.id)}>
+				<Card style={{ width: '18rem' }}>
+					<Card.Body>
 						<Card.Title>{props.name}</Card.Title>
 						<Card.Subtitle className="mb-2 text-muted">
 							{props.brand}
@@ -22,9 +22,9 @@ function Milk(props) {
 								<li>{props.remaining}</li>
 							</ul>
 						</Card.Text>
-					</div>
-				</Card.Body>
-			</Card>
+					</Card.Body>
+				</Card>
+			</div>
 			<hr />
 		</React.Fragment>
 	);
