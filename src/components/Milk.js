@@ -5,10 +5,11 @@ import Card from 'react-bootstrap/Card';
 function Milk(props) {
 	const myStyledList = {
 		listStyle: 'none',
+		cursor: 'pointer',
 	};
 	return (
 		<React.Fragment>
-			<div onClick={() => props.whenMilkClicked(props.id)}>
+			<div style={myStyledList} onClick={() => props.whenMilkClicked(props.id)}>
 				<Card style={{ width: '18rem' }}>
 					<Card.Body>
 						<Card.Title>{props.name}</Card.Title>
