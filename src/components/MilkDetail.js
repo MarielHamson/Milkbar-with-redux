@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 function MilkDetail(props) {
-	const { milk, onClickingDelete } = props;
+	const { milk, onClickingDelete, onClickingSell } = props;
 	const myStyledList = {
 		listStyle: 'none',
 	};
@@ -47,7 +47,10 @@ function MilkDetail(props) {
 								</Button>
 								<br />
 								<br />
-								<Button variant="outline-info" onClick={props.onClickingSell}>
+								<Button
+									variant="outline-info"
+									onClick={() => onClickingSell(milk.id)}
+								>
 									{' '}
 									Sell Pint
 								</Button>
@@ -65,6 +68,7 @@ MilkDetail.propTypes = {
 	milk: PropTypes.object,
 	onClickingDelete: PropTypes.func,
 	onClickingEdit: PropTypes.func,
+	onClickingSell: PropTypes.func,
 };
 
 export default MilkDetail;

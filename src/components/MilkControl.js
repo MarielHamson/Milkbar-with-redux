@@ -52,17 +52,22 @@ class MilkControl extends React.Component {
 		});
 	};
 
-	handleSellingMilk = (milkToEdit) => {
-		// const milkMinusOne = { ...milkToEdit, milk.remaining: remaining -= 1 };
-		// const soldOneMainMilkList = this.state.mainMilkList
-		// 	.filter((milk) => milk.id !== this.state.selectedMilk.id)
-		// 	.concat(milkMinusOne);
+	handleSellingMilk = (id) => {
+		const soldMilk = this.state.mainMilkList.filter(
+			(milk) => milk.id === id
+		)[0];
+		if (soldMilk.remaining > 0) {
+			soldMilk.remaining--;
+		}
+		const editedMilkList = this.state.mainMilkList
+			.filter((milk) => milk.id !== id)
+			.concat(soldMilk);
 		this.setState({
-			// mainMilkList: soldOneMainMilkList,
+			mainMilkList: editedMilkList,
 			editing: false,
-			selectedMilk: null,
 		});
 	};
+
 	handleChangingSelectedMilk = (id) => {
 		const selectedMilk = this.state.mainMilkList.filter(
 			(milk) => milk.id === id
@@ -107,7 +112,7 @@ class MilkControl extends React.Component {
 					milk={this.state.selectedMilk}
 					onClickingDelete={this.handleDeletingMilk}
 					onClickingEdit={this.handleEditClick}
-					onClickingSell={this.handleSellClick}
+					onClickingSell={this.handleSellingMilk}
 				/>
 			);
 			buttonText = 'Return to Milk List';
