@@ -41,23 +41,21 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [NPM]
 
 `$ git clone https://github.com/MarielHamson/MilkBar.git`
 
-# Go into the repository
+### Go into the repository
 
-\$ cd milkbar
+`$ cd milkbar`
 
-# Open repository in VS Code or other
+### Open repository in VS Code or other
 
-\$ code .
+`$ code .`
 
-# Install dependencies in Root Project Directory (milkbar)
+### Install dependencies in Root Project Directory (milkbar)
 
-\$ npm install
+`$ npm install`
 
-# Run the app
+### Run the app
 
-\$ npm start
-
-```
+`$ npm start`
 
 ## Reach Out
 
@@ -93,4 +91,7 @@ MIT
 > LinkedIn[MarielHamson](https://www.linkedin.com/MarielHamson) &nbsp;&middot;&nbsp;
 > GitHub [MarielHamson](https://github.com/MarielHamson) &nbsp;&middot;&nbsp;
 > Instagram [Miriquitecontrary](https://instagram.com/miriquitecontrary)
+
+```
+
 ```
