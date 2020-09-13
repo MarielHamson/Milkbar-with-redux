@@ -33,7 +33,7 @@ MilkBar  <br>
 
 ## Wireframe Mockup
 
-![component mockup](../milkbar/public/milkbar-mockup.png)
+![component mockup](public/milkbar-mockup.png)
 
 ## How To Use
 
