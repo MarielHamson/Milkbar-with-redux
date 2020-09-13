@@ -1,6 +1,7 @@
 <h1 align="center">
   <br>
-  <a href="https://www.github.com/MarielHamson/MilkBar"><img src="https://unsplash.com/photos/dxb_HSjoQ40" alt="Milkbar Logo" width="200"></a>
+  <a href="https://www.github.com/MarielHamson/MilkBar">
+![Image of Milk](https://unsplash.com/photos/dxb_HSjoQ40)
   <br>
 MilkBar  <br>
 </h1>
