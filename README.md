@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://www.github.com/MarielHamson/MilkBar">
+	
 ![Image of Milk](https://images.unsplash.com/photo-1563636619-e9143da7973b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80)
   <br>
 MilkBar  <br>
