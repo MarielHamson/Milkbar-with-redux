@@ -1,6 +1,7 @@
 <h1 align="center">
   <br>
-  <a href="https://www.github.com/MarielHamson/MilkBar"><img src="../milkbar/public/milk-placeholder.jpeg" alt="Milkbar Logo" width="200"></a>
+	
+![Image of Milk](https://images.unsplash.com/photo-1563636619-e9143da7973b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80)
   <br>
 MilkBar  <br>
 </h1>
@@ -25,6 +26,7 @@ MilkBar  <br>
 - Edit or Delete Milk variety
 - Sell 1 pint of milk
 - Mobile Responsive Site
+- Navigation Bar (Coming Soon!)
 
 - Cross platform
   - Windows, macOS and Linux ready.
