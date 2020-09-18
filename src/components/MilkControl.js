@@ -11,62 +11,55 @@ import PropTypes from 'prop-types';
 class MilkControl extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			selectedMilk: null,
-			editing: false,
-		};
+		this.state = {};
 	}
 
 	handleClick = () => {
-		if (this.state.selectedMilk != null) {
-			this.setState({
-				selectedMilk: null,
-				editing: false,
-			});
-		} else {
-			const { dispatch } = this.props;
-			const action = a.toggleForm();
-			dispatch(action);
-		}
+		const { dispatch } = this.props;
+		const action2 = a.selectedMilkToNull();
+		dispatch(action2);
+		const action = a.toggleForm();
+		dispatch(action);
 	};
 
 	handleEditClick = () => {
-		this.setState({ editing: true });
+		const { dispatch } = this.props;
+		const action = a.toggleForm();
+		dispatch(action);
 	};
 
 	handleSellClick = () => {
-		this.setState({ editing: false });
+		const { dispatch } = this.props;
+		const action = a.selectedMilkToNull();
+		dispatch(action);
 	};
 
 	handleEditingMilkInList = (milkToEdit) => {
 		const { dispatch } = this.props;
 		const action = a.addMilk(milkToEdit);
 		dispatch(action);
-		this.setState({
-			editing: false,
-			selectedMilk: null,
-		});
+		const action2 = a.selectedMilkToNull();
+		dispatch(action2);
+		const action3 = a.toggleForm();
+		dispatch(action3);
 	};
 
-	handleSellingMilk = (id) => {
-		const soldMilk = this.state.mainMilkList.filter(
-			(milk) => milk.id === id
-		)[0];
-		if (soldMilk.remaining > 0) {
-			soldMilk.remaining--;
+	handleSellingMilk = (milkId) => {
+		const milkToSell = this.props.mainMilkList[milkId];
+		const { dispatch } = this.props;
+		if (milkToSell.remaining > 0) {
+			milkToSell.remaining--;
 		}
-		const editedMilkList = this.state.mainMilkList
-			.filter((milk) => milk.id !== id)
-			.concat(soldMilk);
-		this.setState({
-			mainMilkList: editedMilkList,
-			editing: false,
-		});
+		const sellOne = milkToSell;
+		const action = a.addMilk(sellOne);
+		dispatch(action);
 	};
 
 	handleChangingSelectedMilk = (id) => {
-		const selectedMilk = this.props.mainMilkList[id];
-		this.setState({ selectedMilk: selectedMilk });
+		const { dispatch } = this.props;
+		const selectedMilkInMainMilkList = this.props.mainMilkList[id];
+		const action = a.selectMilk(selectedMilkInMainMilkList);
+		dispatch(action);
 	};
 
 	handleAddingNewMilkToList = (newMilk) => {
@@ -81,6 +74,8 @@ class MilkControl extends React.Component {
 		const { dispatch } = this.props;
 		const action = a.deleteMilk(id);
 		dispatch(action);
+		const action2 = a.selectedMilkToNull();
+		dispatch(action2);
 	};
 
 	render() {
@@ -90,7 +85,7 @@ class MilkControl extends React.Component {
 		if (this.state.editing) {
 			currentlyVisibleState = (
 				<EditMilkForm
-					milk={this.state.selectedMilk}
+					milk={this.props.selectedMilk}
 					onEditMilk={this.handleEditingMilkInList}
 					onSellMilk={this.handleSellingMilk}
 				/>
@@ -99,7 +94,7 @@ class MilkControl extends React.Component {
 		} else if (this.state.selectedMilk != null) {
 			currentlyVisibleState = (
 				<MilkDetail
-					milk={this.state.selectedMilk}
+					milk={this.props.selectedMilk}
 					onClickingDelete={this.handleDeletingMilk}
 					onClickingEdit={this.handleEditClick}
 					onClickingSell={this.handleSellingMilk}
@@ -135,12 +130,14 @@ class MilkControl extends React.Component {
 MilkControl.propTypes = {
 	mainMilkList: PropTypes.object,
 	formVisibleOnPage: PropTypes.bool,
+	selectedMilk: PropTypes.object,
 };
 
 const mapStateToProps = (storeState) => {
 	return {
-		mainMilkList: storeState.mainTicketList,
+		mainMilkList: storeState.mainMilkList,
 		formVisibleOnPage: storeState.formVisibleOnPage,
+		selectedMilk: storeState.selectedMilk,
 	};
 };
 

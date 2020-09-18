@@ -34,4 +34,25 @@ describe('milkbar actions', () => {
 			id: 1,
 		});
 	});
+
+	test('selectMilk should create SELECT_MILK action', () => {
+		expect(
+			actions.selectMilk({
+				name: 'Chocolate Milk',
+				brand: "Gerry's",
+				price: '15.00',
+				origin: 'West of the coastal range of Oregon',
+				remaining: 5,
+				id: 1,
+			})
+		).toEqual({
+			type: c.SELECT_MILK,
+			name: 'Chocolate Milk',
+			brand: "Gerry's",
+			price: '15.00',
+			origin: 'West of the coastal range of Oregon',
+			remaining: 5,
+			id: 1,
+		});
+	});
 });

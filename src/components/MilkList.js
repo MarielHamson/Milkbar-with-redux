@@ -11,6 +11,9 @@ function MilkList(props) {
 				<Milk
 					whenMilkClicked={props.onMilkSelection}
 					name={milk.name}
+					brand={milk.brand}
+					price={milk.price}
+					origin={milk.origin}
 					id={milk.id}
 					key={milk.id}
 				/>
@@ -20,7 +23,7 @@ function MilkList(props) {
 }
 
 MilkList.propTypes = {
-	milkList: PropTypes.array,
+	milkList: PropTypes.object,
 	onMilkSelection: PropTypes.func,
 };
 export default MilkList;
