@@ -18,7 +18,12 @@ function MilkDetail(props) {
 				<Row>
 					<Col>
 						<h1>Milk Details</h1>
-						<Card style={{ width: '18rem' }}>
+						<Card
+							style={{ width: '18rem' }}
+							bg="secondary"
+							text="light"
+							className="p-3"
+						>
 							<Card.Body>
 								<Card.Title>{Object.values(milk)[0].name}</Card.Title>
 								<Card.Subtitle className="mb-2 text-muted">

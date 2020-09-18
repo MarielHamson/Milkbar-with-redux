@@ -10,7 +10,7 @@ function Milk(props) {
 	return (
 		<React.Fragment>
 			<div style={myStyledList} onClick={() => props.whenMilkClicked(props.id)}>
-				<Card style={{ width: '18rem' }}>
+				<Card style={{ width: '18rem' }} bg="secondary" text="light">
 					<Card.Body>
 						<Card.Title>{props.name}</Card.Title>
 						<Card.Subtitle className="mb-2 text-muted">

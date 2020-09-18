@@ -3,10 +3,13 @@ import Milk from './Milk';
 import PropTypes from 'prop-types';
 
 function MilkList(props) {
+	const font = {
+		color: 'White',
+	};
 	return (
 		<React.Fragment>
 			<hr />
-			<h1>Our Milk Lineup</h1>
+			<h1 style={font}>Our Milk Lineup</h1>
 			{Object.values(props.milkList).map((milk) => {
 				return (
 					<Milk
