@@ -6,7 +6,7 @@
 MilkBar  <br>
 </h1>
 
-<h4 align="center">A minimal but beautiful tracker for a bar where they sell milk</h4>
+<h4 align="center">A minimal but beautiful tracker for a bar where they sell milk, using redux</h4>
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
