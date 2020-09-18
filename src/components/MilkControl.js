@@ -4,13 +4,13 @@ import MilkList from './MilkList';
 import MilkDetail from './MilkDetail';
 import EditMilkForm from './EditMilkForm';
 import Button from 'react-bootstrap/Button';
+import { connect } from 'react-redux';
+import * as a from './../actions';
 
 class MilkControl extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			formVisibleOnPage: false,
-			mainMilkList: [],
 			selectedMilk: null,
 			editing: false,
 		};
@@ -19,14 +19,13 @@ class MilkControl extends React.Component {
 	handleClick = () => {
 		if (this.state.selectedMilk != null) {
 			this.setState({
-				formVisibleOnPage: false,
 				selectedMilk: null,
 				editing: false,
 			});
 		} else {
-			this.setState((prevState) => ({
-				formVisibleOnPage: !prevState.formVisibleOnPage,
-			}));
+			const { dispatch } = this.props;
+			const action = a.toggleForm();
+			dispatch(action);
 		}
 	};
 
@@ -35,18 +34,14 @@ class MilkControl extends React.Component {
 	};
 
 	handleSellClick = () => {
-		this.setState({
-			editing: false,
-			selectedMilk: null,
-		});
+		this.setState({ editing: false });
 	};
 
 	handleEditingMilkInList = (milkToEdit) => {
-		const editedMainMilkList = this.state.mainMilkList
-			.filter((milk) => milk.id !== this.state.selectedMilk.id)
-			.concat(milkToEdit);
+		const { dispatch } = this.props;
+		const action = a.addMilk(milkToEdit);
+		dispatch(action);
 		this.setState({
-			mainMilkList: editedMainMilkList,
 			editing: false,
 			selectedMilk: null,
 		});
@@ -69,28 +64,21 @@ class MilkControl extends React.Component {
 	};
 
 	handleChangingSelectedMilk = (id) => {
-		const selectedMilk = this.state.mainMilkList.filter(
-			(milk) => milk.id === id
-		)[0];
+		const selectedMilk = this.props.mainMilkList[id];
 		this.setState({ selectedMilk: selectedMilk });
 	};
 
 	handleAddingNewMilkToList = (newMilk) => {
-		const newMainMilkList = this.state.mainMilkList.concat(newMilk);
-		this.setState({
-			mainMilkList: newMainMilkList,
-			formVisibleOnPage: false,
-		});
+		const { dispatch } = this.props;
+		const action = a.addMilk(newMilk);
+		dispatch(action);
+		const action2 = a.toggleForm();
 	};
 
 	handleDeletingMilk = (id) => {
-		const newMainMilkList = this.state.mainMilkList.filter(
-			(milk) => milk.id !== id
-		);
-		this.setState({
-			mainMilkList: newMainMilkList,
-			selectedMilk: null,
-		});
+		const { dispatch } = this.props;
+		const action = a.deleteMilk(id);
+		dispatch(action);
 	};
 
 	render() {
@@ -116,7 +104,7 @@ class MilkControl extends React.Component {
 				/>
 			);
 			buttonText = 'Return to Milk List';
-		} else if (this.state.formVisibleOnPage) {
+		} else if (this.props.formVisibleOnPage) {
 			currentlyVisibleState = (
 				<NewMilkForm onNewMilkCreation={this.handleAddingNewMilkToList} />
 			);
@@ -124,7 +112,7 @@ class MilkControl extends React.Component {
 		} else {
 			currentlyVisibleState = (
 				<MilkList
-					milkList={this.state.mainMilkList}
+					milkList={this.props.mainMilkList}
 					onMilkSelection={this.handleChangingSelectedMilk}
 				/>
 			);
@@ -141,5 +129,19 @@ class MilkControl extends React.Component {
 		);
 	}
 }
+
+MilkControl.propTypes = {
+	mainMilkList: PropTypes.object,
+	formVisibleOnPage: PropTypes.bool,
+};
+
+const mapStateToProps = (storeState) => {
+	return {
+		mainMilkList: storeState.mainTicketList,
+		formVisibleOnPage: storeState.formVisibleOnPage,
+	};
+};
+
+TicketControl = connect(mapStateToProps)(TicketControl);
 
 export default MilkControl;
