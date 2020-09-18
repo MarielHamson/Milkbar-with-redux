@@ -6,6 +6,7 @@ import EditMilkForm from './EditMilkForm';
 import Button from 'react-bootstrap/Button';
 import { connect } from 'react-redux';
 import * as a from './../actions';
+import PropTypes from 'prop-types';
 
 class MilkControl extends React.Component {
 	constructor(props) {
@@ -73,6 +74,7 @@ class MilkControl extends React.Component {
 		const action = a.addMilk(newMilk);
 		dispatch(action);
 		const action2 = a.toggleForm();
+		dispatch(action2);
 	};
 
 	handleDeletingMilk = (id) => {
@@ -142,6 +144,6 @@ const mapStateToProps = (storeState) => {
 	};
 };
 
-TicketControl = connect(mapStateToProps)(TicketControl);
+MilkControl = connect(mapStateToProps)(MilkControl);
 
 export default MilkControl;
