@@ -11,13 +11,16 @@ function MilkDetail(props) {
 	const myStyledList = {
 		listStyle: 'none',
 	};
+	const font = {
+		color: 'White',
+	};
 
 	return (
 		<React.Fragment>
 			<Container>
 				<Row>
 					<Col>
-						<h1>Milk Details</h1>
+						<h1 style={font}> Milk Details</h1>
 						<Card
 							style={{ width: '18rem' }}
 							bg="secondary"

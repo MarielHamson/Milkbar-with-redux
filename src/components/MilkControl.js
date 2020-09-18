@@ -56,6 +56,8 @@ class MilkControl extends React.Component {
 		const sellOne = milkToSell;
 		const action = a.addMilk(sellOne);
 		dispatch(action);
+		const action2 = a.selectedMilkToNull();
+		dispatch(action2);
 	};
 
 	handleChangingSelectedMilk = (id) => {
