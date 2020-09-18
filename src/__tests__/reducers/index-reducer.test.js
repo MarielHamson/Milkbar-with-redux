@@ -11,6 +11,7 @@ describe('rootReducer', () => {
 		expect(rootReducer({}, { type: null })).toEqual({
 			mainMilkList: {},
 			formVisibleOnPage: false,
+			selectedMilk: null,
 		});
 	});
 
