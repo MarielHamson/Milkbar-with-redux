@@ -6,7 +6,7 @@
 MilkBar  <br>
 </h1>
 
-<h4 align="center">A minimal but beautiful tracker for a bar where they sell milk, using redux</h4>
+<h4 align="center">A minimal but beautiful tracker for a bar where they sell milk, using react with redux</h4>
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
@@ -23,7 +23,7 @@ MilkBar  <br>
 - Easy to use Navigation Bar
 - Add new Milk variety
 - See all Milk varieties
-- Edit or Delete Milk variety
+- Delete Milk variety
 - Sell 1 pint of milk
 - Mobile Responsive Site
 - Navigation Bar (Coming Soon!)
@@ -54,6 +54,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [NPM]
 ### Install dependencies in Root Project Directory (milkbar)
 
 `$ npm install`
+`$ npm install redux@4.0.5 react-redux@7.1.3`
 
 ### Run the app
 
@@ -68,7 +69,8 @@ MilkBar is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if
 This software uses the following technologies:
 
 - React (JSX)
-- CSS (Bootstrap)
+- Redux
+- CSS (Bootstrap for React)
 
 ## Support
 

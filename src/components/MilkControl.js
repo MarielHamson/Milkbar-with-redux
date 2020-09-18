@@ -2,7 +2,6 @@ import React from 'react';
 import NewMilkForm from './NewMilkForm';
 import MilkList from './MilkList';
 import MilkDetail from './MilkDetail';
-// import EditMilkForm from './EditMilkForm';
 import Button from 'react-bootstrap/Button';
 import { connect } from 'react-redux';
 import * as a from './../actions';
@@ -25,27 +24,11 @@ class MilkControl extends React.Component {
 		}
 	};
 
-	// handleEditClick = () => {
-	// 	const { dispatch } = this.props;
-	// 	const action = a.toggleForm();
-	// 	dispatch(action);
-	// };
-
 	handleSellClick = () => {
 		const { dispatch } = this.props;
 		const action = a.selectedMilkToNull();
 		dispatch(action);
 	};
-
-	// handleEditingMilkInList = (milkToEdit) => {
-	// 	const { dispatch } = this.props;
-	// 	const action = a.addMilk(milkToEdit);
-	// 	dispatch(action);
-	// 	const action2 = a.selectedMilkToNull();
-	// 	dispatch(action2);
-	// 	const action3 = a.toggleForm();
-	// 	dispatch(action3);
-	// };
 
 	handleSellingMilk = (milkId) => {
 		const milkToSell = this.props.mainMilkList[milkId];
@@ -87,21 +70,11 @@ class MilkControl extends React.Component {
 		let currentlyVisibleState = null;
 		let buttonText = null;
 
-		// if (this.state.editing) {
-		// 	currentlyVisibleState = (
-		// 		<EditMilkForm
-		// 			milk={this.props.selectedMilk}
-		// 			onEditMilk={this.handleEditingMilkInList}
-		// 			onSellMilk={this.handleSellingMilk}
-		// 		/>
-		// 	);
-		// buttonText = 'Return to Milk List';
 		if (this.props.selectedMilk !== null) {
 			currentlyVisibleState = (
 				<MilkDetail
 					milk={this.props.selectedMilk}
 					onClickingDelete={this.handleDeletingMilk}
-					// onClickingEdit={this.handleEditClick}
 					onClickingSell={this.handleSellingMilk}
 				/>
 			);
