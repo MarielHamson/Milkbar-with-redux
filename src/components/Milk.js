@@ -36,6 +36,7 @@ Milk.propTypes = {
 	brand: PropTypes.string.isRequired,
 	price: PropTypes.string.isRequired,
 	origin: PropTypes.string.isRequired,
+	remaining: PropTypes.number.isRequired,
 	whenMilkClicked: PropTypes.func,
 };
 

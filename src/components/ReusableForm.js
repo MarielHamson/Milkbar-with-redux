@@ -49,7 +49,7 @@ function MyStyledForm(props) {
 						<Form.Group controlId="formGroupRemaining">
 							<Form.Label>Amount Remaining</Form.Label>
 							<Form.Control
-								type="text"
+								type="number"
 								name="remaining"
 								placeholder="How many pints left?"
 							/>

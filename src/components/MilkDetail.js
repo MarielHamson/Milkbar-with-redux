@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 function MilkDetail(props) {
-	const { milk, onClickingDelete, onClickingSell } = props;
+	const { milk, onClickingDelete, onClickingSell /* onClickingEdit */ } = props;
 	const myStyledList = {
 		listStyle: 'none',
 	};
@@ -20,28 +20,31 @@ function MilkDetail(props) {
 						<h1>Milk Details</h1>
 						<Card style={{ width: '18rem' }}>
 							<Card.Body>
-								<Card.Title>{props.name}</Card.Title>
+								<Card.Title>{Object.values(milk)[0].name}</Card.Title>
 								<Card.Subtitle className="mb-2 text-muted">
-									{props.brand}
+									{Object.values(milk)[0].brand}
 								</Card.Subtitle>
 								<Card.Text>
 									<ul style={myStyledList}>
-										<li>Price ${milk.price}</li>
-										<li>Origin: {milk.origin}</li>
-										<li>{milk.remaining} remaining</li>
+										<li>Price ${Object.values(milk)[0].price}</li>
+										<li>Origin: {Object.values(milk)[0].origin}</li>
+										<li>{Object.values(milk)[0].remaining} remaining</li>
 									</ul>
 								</Card.Text>
 								<br />
 								<br />
-								<Button variant="outline-info" onClick={props.onClickingEdit}>
+								{/* <Button
+									variant="outline-info"
+									onClick={() => onClickingEdit(Object.values(milk)[0].id)}
+								>
 									{' '}
 									Edit Milk Details
-								</Button>
+								</Button> */}
 								<br />
 								<br />
 								<Button
 									variant="outline-danger"
-									onClick={() => onClickingDelete(milk.id)}
+									onClick={() => onClickingDelete(Object.values(milk)[0].id)}
 								>
 									Delete Milk
 								</Button>
@@ -49,7 +52,7 @@ function MilkDetail(props) {
 								<br />
 								<Button
 									variant="outline-info"
-									onClick={() => onClickingSell(milk.id)}
+									onClick={() => onClickingSell(Object.values(milk)[0].id)}
 								>
 									{' '}
 									Sell Pint
@@ -67,7 +70,7 @@ function MilkDetail(props) {
 MilkDetail.propTypes = {
 	milk: PropTypes.object,
 	onClickingDelete: PropTypes.func,
-	onClickingEdit: PropTypes.func,
+	// onClickingEdit: PropTypes.func,
 	onClickingSell: PropTypes.func,
 };
 

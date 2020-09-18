@@ -11,7 +11,7 @@ function NewMilkForm(props) {
 			brand: event.target.brand.value,
 			price: event.target.price.value,
 			origin: event.target.origin.value,
-			remaining: event.target.remaining.value,
+			remaining: parseInt(event.target.remaining.value),
 			id: v4(),
 		});
 	}
